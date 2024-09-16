@@ -1,0 +1,9 @@
+.app__pokedex,
+.app__pokedex__all {
+  background-color: #f1f5f9;
+  padding: 2rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 1rem;
+  }
+}
