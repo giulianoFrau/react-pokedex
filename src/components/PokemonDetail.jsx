@@ -92,7 +92,7 @@ const AppPokemonDetails = () => {
           </Link>
         </div>
         <label className="text-gray-500 text-xs text-left">
-          *Passa con il mouse sopra la foto del pokemon per farlo animare!
+          *Passa con il mouse sopra la foto del pokemon per farlo muovere!
         </label>
       </div>
     </div>
