@@ -79,7 +79,7 @@ const PokemonCard = ({ name, pokemonData, isDeleteFromListVisible = true }) => {
         <div className="w-full flex flex-col lg:flex-row gap-2 mt-auto ">
           {isDeleteFromListVisible && (
             <Button
-              className="bg-red-400 text-white hover:bg-red-600 rounded-md p-2 flex justify-center flex-1"
+              className="bg-red-500 text-white hover:bg-red-700 rounded-md p-2 flex justify-center flex-1"
               onClick={deleteCurrentPokemon}
             >
               Cancella dalla lista<i className="ml-3 pi pi-trash"></i>
@@ -88,14 +88,14 @@ const PokemonCard = ({ name, pokemonData, isDeleteFromListVisible = true }) => {
           {favouritePokemon.find((pokemon) => pokemon.name === name) ? (
             <Button
               onClick={removeToFavourite}
-              className="w-full flex justify-center bg-blue-400 text-white hover:bg-blue-600 rounded-md p-2 flex-1"
+              className="w-full flex justify-center bg-yellow-500 text-gray-900 hover:bg-yellow-600 rounded-md p-2 flex-1"
             >
               Rimuovi dal pokedex <i className="ml-3 pi pi-heart-fill"></i>
             </Button>
           ) : (
             <Button
               onClick={addCurrentPokemon}
-              className="w-full flex justify-center bg-green-400 text-white hover:bg-green-600 rounded-md p-2 flex-1"
+              className="w-full flex justify-center bg-teal-500 text-white hover:bg-teal-700 rounded-md p-2 flex-1"
             >
               Aggiungi al pokedex <i className="ml-3 pi pi-heart"></i>
             </Button>
