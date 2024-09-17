@@ -72,12 +72,20 @@ const AppPokemonDetails = () => {
           <div className="text-gray-500">Caricamento informazioni...</div>
         )}
       </div>
-      <Link
-        className="inline-block bg-blue-500 text-white rounded-md py-2 px-4 hover:bg-blue-600 transition-colors shadow-md"
-        to="/"
-      >
-        Torna alla Lista
-      </Link>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start  px-4">
+        <Link
+          className="inline-block bg-blue-500 text-white rounded-md py-2 px-4 hover:bg-blue-600 transition-colors shadow-md"
+          to="/"
+        >
+          Torna alla Lista
+        </Link>
+        <Link
+          className="inline-block bg-blue-400 text-white rounded-md py-2 px-4 hover:bg-blue-500 transition-colors shadow-md"
+          to="/pokedex"
+        >
+          Torna al Pokedex
+        </Link>
+      </div>
     </div>
   );
 };
