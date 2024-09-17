@@ -74,13 +74,13 @@ const AppPokemonDetails = () => {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start  px-4">
         <Link
-          className="inline-block bg-blue-500 text-white rounded-md py-2 px-4 hover:bg-blue-600 transition-colors shadow-md"
+          className="inline-block bg-teal-500 text-white hover:text-white rounded-md py-2 px-4 hover:bg-teal-700 transition-colors shadow-md"
           to="/"
         >
           Torna alla Lista
         </Link>
         <Link
-          className="inline-block bg-blue-400 text-white rounded-md py-2 px-4 hover:bg-blue-500 transition-colors shadow-md"
+          className="inline-block bg-yellow-500 text-white hover:text-white  rounded-md py-2 px-4 hover:bg-yellow-600 transition-colors shadow-md"
           to="/pokedex"
         >
           Torna al Pokedex
