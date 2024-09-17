@@ -15,23 +15,29 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
   background-color: #f1f5f9;
   height: 110vh;
 }
 
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+
 .p-radiobutton-box {
-  border: 1px solid #60A5FA;
+  border: 1px solid #60a5fa;
 }
 
 a {
   font-weight: 500;
-  color: #60A5FA;
+  color: #60a5fa;
   text-decoration: inherit;
 }
 
 a:hover {
-  color: #60A5FA;
+  color: #60a5fa;
 }
 
 h1 {
@@ -43,7 +49,7 @@ h1 {
 }
 
 button:hover {
-  background-color: #60A5FA;
+  background-color: #60a5fa;
 }
 
 button:focus,
@@ -71,9 +77,9 @@ button:focus-visible {
 }
 
 .paginator .p-paginator .p-paginator-page.p-highlight {
-  background-color: #60A5FA;
+  background-color: #60a5fa;
   color: #ffffff;
-  border-color: #60A5FA;
+  border-color: #60a5fa;
 }
 
 .paginator .p-paginator .p-paginator-page:hover {
@@ -106,5 +112,3 @@ button:focus-visible {
   color: #d1d5db;
   border-color: #d1d5db;
 }
-
-

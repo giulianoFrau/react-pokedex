@@ -1,4 +1,5 @@
 import { Avatar } from "primereact/avatar";
+import AppProject from "./AppProject";
 
 const AppAbout = () => {
   return (
@@ -68,29 +69,8 @@ const AppAbout = () => {
       <h3 className="text-2xl font-semibold text-gray-800 mb-2">
         Altri progetti
       </h3>
-      <p className="text-gray-600 mb-4">
-        Potete consultare altri due miei progetti ai seguenti link:
-        <ul className="list-disc list-inside">
-          <li>
-            <a
-              href="https://react-crud-app-eosin.vercel.app/"
-              className="text-blue-500 hover:underline"
-            >
-              Crud application Paesi del mondo
-            </a>{" "}
-            - Realizzato con <b>React</b>
-          </li>
-          <li>
-            <a
-              href="https://sitovetrina.vercel.app/#/homePage"
-              className="text-blue-500 hover:underline"
-            >
-              Esempio di sito vetrina
-            </a>{" "}
-            - Realizzato con <b>Vue 3</b>
-          </li>
-        </ul>
-      </p>
+
+      <AppProject />
     </div>
   );
 };
