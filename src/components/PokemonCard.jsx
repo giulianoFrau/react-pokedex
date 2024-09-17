@@ -83,7 +83,7 @@ const PokemonCard = ({ name, pokemonData, isDeleteFromListVisible = true }) => {
               Cancella dalla lista<i className="ml-3 pi pi-trash"></i>
             </Button>
           )}
-          {favouritePokemon.some((pokemon) => pokemon.name === name) ? (
+          {favouritePokemon.find((pokemon) => pokemon.name === name) ? (
             <Button
               onClick={removeToFavourite}
               className="w-full flex justify-center bg-blue-400 text-white hover:bg-blue-600 rounded-md p-2 flex-1"

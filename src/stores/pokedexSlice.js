@@ -27,19 +27,17 @@ export const allPokemonSlice = createSlice({
       state.preferPokemon = state.preferPokemon.filter(
         (pokemon) => pokemon.name !== action.payload
       );
-      // Salva lo stato aggiornato nel sessionStorage
+
       sessionStorage.setItem("pokemonState", JSON.stringify(state));
     },
     addPokemon: (state, action) => {
       state.preferPokemon.push(action.payload);
-      // Salva lo stato aggiornato nel sessionStorage
       sessionStorage.setItem("pokemonState", JSON.stringify(state));
     },
     removePokemonToFavourite: (state, action) => {
       state.preferPokemon = state.preferPokemon.filter(
         (pokemon) => pokemon.name !== action.payload
       );
-      // Salva lo stato aggiornato nel sessionStorage
       sessionStorage.setItem("pokemonState", JSON.stringify(state));
     },
   },
