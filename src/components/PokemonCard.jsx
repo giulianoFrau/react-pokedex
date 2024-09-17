@@ -76,9 +76,9 @@ const PokemonCard = ({ name, pokemonData, isDeleteFromListVisible = true }) => {
         {isHover && (
           <div className="absolute inset-0 top-0 flex justify-start bg-gray-800 bg-opacity-75 rounded-lg text-white text-lg font-semibold transition-opacity opacity-100">
             <div className="hidden sm:flex flex-col items-center w-full p-4">
-              <i className="ml-2 pi pi-eye"></i>
+              <i className="ml-2 pi pi-info-circle"></i>
               <span className="mt-2 text-center">
-                Vedi i dettagli di &nbsp;
+                Clicca per i dettagli di &nbsp;
                 <span className="capitalize">{name}</span>
               </span>
             </div>
