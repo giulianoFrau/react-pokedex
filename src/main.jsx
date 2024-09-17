@@ -26,7 +26,7 @@ const router = createBrowserRouter([
     element: <FavouritePokemonView />,
   },
   {
-    path: "/pokedex/:name",
+    path: "/pokemon/:name",
     element: <PokemonDetail />,
   },
 ]);

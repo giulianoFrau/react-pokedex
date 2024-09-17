@@ -1,5 +1,5 @@
 import { Toast } from "primereact/toast";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Button } from "primereact/button";
 import { Avatar } from "primereact/avatar";
 import { useNavigate } from "react-router-dom";
@@ -17,6 +17,8 @@ const PokemonCard = ({ name, pokemonData, isDeleteFromListVisible = true }) => {
   const dispatch = useDispatch();
   const toast = useRef(null);
   const navigate = useNavigate();
+
+  const [isHover, setIsHover] = useState(false);
 
   const id = pokemonData.url.split("/").reverse()[1];
   const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
@@ -57,7 +59,7 @@ const PokemonCard = ({ name, pokemonData, isDeleteFromListVisible = true }) => {
   };
 
   const goToDetail = () => {
-    navigate(`/pokedex/${name}`, {
+    navigate(`/pokemon/${name}`, {
       state: { pokemon: pokemonData, id, image },
     });
   };
@@ -68,11 +70,44 @@ const PokemonCard = ({ name, pokemonData, isDeleteFromListVisible = true }) => {
       <div
         className="app__pokedex__container-card p-2 border border-gray-200 rounded-lg shadow-md flex flex-col gap-2 bg-white md:p-4 cursor-pointer hover:scale-105 transition-all"
         onClick={goToDetail}
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
       >
-        <Avatar image={image} size="xlarge" className="m-auto w-1/4 h-1/4" />
-        <div className="text-center text-xl font-semibold text-gray-800 uppercase">
+        {isHover && (
+          <div className="absolute inset-0 top-0 flex justify-start bg-gray-800 bg-opacity-75 rounded-lg text-white text-lg font-semibold transition-opacity opacity-100">
+            <div className="hidden sm:flex flex-col items-center w-full p-4">
+              <i className="ml-2 pi pi-eye"></i>
+              <span className="mt-2 text-center">
+                Vedi i dettagli di &nbsp;
+                <span className="capitalize">{name}</span>
+              </span>
+            </div>
+            <div className="block sm:hidden flex flex-col items-center w-full p-4">
+              <span className="mt-2 text-center">
+                Vedi dettagli <i className="ml-2 pi pi-eye"></i>
+              </span>
+            </div>
+          </div>
+        )}
+
+        <Avatar
+          image={image}
+          size="xlarge"
+          className={`m-auto w-1/4 h-1/4 ${isHover ? "blur-lg" : ""}`}
+        />
+        <div
+          className={`text-center text-xl font-semibold text-gray-800 uppercase ${
+            isHover ? "blur-sm" : ""
+          }`}
+        >
           {name}
         </div>
+
+        {/* {isHover && (
+          <div className="text-center text-lg font-semibold text-gray-800 transition-all">
+            Clicca la card per vedere i dettagli
+          </div>
+        )} */}
 
         <div className="w-full flex flex-col lg:flex-row gap-2 mt-auto ">
           {isDeleteFromListVisible && (
