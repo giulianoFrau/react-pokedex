@@ -1,5 +1,5 @@
 import { Toast } from "primereact/toast";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Button } from "primereact/button";
 import { Avatar } from "primereact/avatar";
 import { useNavigate } from "react-router-dom";
@@ -17,8 +17,6 @@ const PokemonCard = ({ name, pokemonData, isDeleteFromListVisible = true }) => {
   const dispatch = useDispatch();
   const toast = useRef(null);
   const navigate = useNavigate();
-
-  const [isHover, setIsHover] = useState(false);
 
   const id = pokemonData.url.split("/").reverse()[1];
   const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
@@ -70,8 +68,6 @@ const PokemonCard = ({ name, pokemonData, isDeleteFromListVisible = true }) => {
       <div
         className="app__pokedex__container-card p-2 border border-gray-200 rounded-lg shadow-md flex flex-col gap-2 bg-white md:p-4 cursor-pointer hover:scale-105 transition-all"
         onClick={goToDetail}
-        onMouseEnter={() => setIsHover(true)}
-        onMouseLeave={() => setIsHover(false)}
       >
         <Avatar image={image} size="xlarge" className={`m-auto w-1/4 h-1/4 `} />
         <div
