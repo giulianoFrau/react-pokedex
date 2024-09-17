@@ -10,11 +10,18 @@ const savedState = JSON.parse(sessionStorage.getItem("pokemonState")) || {
 };
 
 // Action asincrona per fare la chiamata all'API
-export const fetchPokemon = createAsyncThunk("getPokemon", async () => {
-  const response = await Pokemon.getPokemon();
-  const resp = response.data.results;
-  return resp;
-});
+export const fetchPokemon = createAsyncThunk(
+  "getPokemon",
+  async (_, { getState }) => {
+    const state = getState().allPokemon;
+    if (state.allPokemon.length > 0) {
+      return state.allPokemon;
+    } else {
+      const response = await Pokemon.getPokemon();
+      return response.data.results;
+    }
+  }
+);
 
 export const allPokemonSlice = createSlice({
   name: "allPokemon",
@@ -44,10 +51,9 @@ export const allPokemonSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchPokemon.fulfilled, (state, action) => {
       state.status = "succeeded";
-      state.allPokemon = action.payload.sort((a, b) =>
+      state.allPokemon = [...action.payload].sort((a, b) =>
         a.name > b.name ? 1 : -1
       );
-      // Salva lo stato aggiornato nel sessionStorage
       sessionStorage.setItem("pokemonState", JSON.stringify(state));
     });
   },
