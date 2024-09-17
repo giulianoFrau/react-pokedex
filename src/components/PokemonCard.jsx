@@ -73,41 +73,12 @@ const PokemonCard = ({ name, pokemonData, isDeleteFromListVisible = true }) => {
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >
-        {isHover && (
-          <div className="absolute inset-0 top-0 flex justify-start bg-gray-800 bg-opacity-75 rounded-lg text-white text-lg font-semibold transition-opacity opacity-100">
-            <div className="hidden sm:flex flex-col items-center w-full p-4">
-              <i className="ml-2 pi pi-info-circle"></i>
-              <span className="mt-2 text-center">
-                Clicca per i dettagli di &nbsp;
-                <span className="capitalize">{name}</span>
-              </span>
-            </div>
-            <div className="block sm:hidden flex flex-col items-center w-full p-4">
-              <span className="mt-2 text-center">
-                Vedi dettagli <i className="ml-2 pi pi-eye"></i>
-              </span>
-            </div>
-          </div>
-        )}
-
-        <Avatar
-          image={image}
-          size="xlarge"
-          className={`m-auto w-1/4 h-1/4 ${isHover ? "blur-lg" : ""}`}
-        />
+        <Avatar image={image} size="xlarge" className={`m-auto w-1/4 h-1/4 `} />
         <div
-          className={`text-center text-xl font-semibold text-gray-800 uppercase ${
-            isHover ? "blur-sm" : ""
-          }`}
+          className={`text-center text-xl font-semibold text-gray-800 uppercase transition-all`}
         >
           {name}
         </div>
-
-        {/* {isHover && (
-          <div className="text-center text-lg font-semibold text-gray-800 transition-all">
-            Clicca la card per vedere i dettagli
-          </div>
-        )} */}
 
         <div className="w-full flex flex-col lg:flex-row gap-2 mt-auto ">
           {isDeleteFromListVisible && (
@@ -134,6 +105,10 @@ const PokemonCard = ({ name, pokemonData, isDeleteFromListVisible = true }) => {
             </Button>
           )}
         </div>
+
+        <span className="text-center underline cursor-pointer">
+          Clicca per i dettagli
+        </span>
       </div>
     </>
   );
