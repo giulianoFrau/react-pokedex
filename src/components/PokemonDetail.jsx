@@ -91,7 +91,7 @@ const AppPokemonDetails = () => {
             Torna al Pokedex <i className="ml-3 pi pi-save"></i>
           </Link>
         </div>
-        <label className="text-gray-500 text-xs text-left">
+        <label className="text-gray-500 text-xs ">
           *Passa con il mouse sopra la foto del pokemon per farlo muovere!
         </label>
       </div>
